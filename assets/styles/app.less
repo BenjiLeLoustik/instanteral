@@ -7,6 +7,7 @@
     --gold-color: #FACC15;
     --gold-dark-color: #eab208;
     --gold-muted-color: #FEF9C3;
+    --placeholder-color: #8E8E8E;
 
     --box-shadow: 0 0 7px rgba( 0, 0, 0, .5 );
 
@@ -16,7 +17,7 @@
     --default-padding: 10px;
     --default-gap: 10px;
 
-    --default-button-radius: 10px;
+    --default-radius: 10px;
 }
 
 * { box-sizing: border-box; outline: none; }
@@ -82,7 +83,7 @@ html, body {
                 button {
                     .ico( 40px, 40px, 20px, 5px, var( --gold-dark-color ) );
 
-                    .toRem( border-radius, var( --default-button-radius ) );
+                    .toRem( border-radius, var( --default-radius ) );
 
                     background: transparent;
                     border: 0;
@@ -129,7 +130,7 @@ html, body {
                     }
 
                     &::before {
-                        .toRem( border-radius, var( --default-button-radius ) );
+                        .toRem( border-radius, var( --default-radius ) );
 
                         opacity: .2;
                         position: absolute;
@@ -147,6 +148,55 @@ html, body {
                             
                             opacity: .3;
                         }
+                    }
+                }
+            }
+
+            #searchBox {
+                .d_flex( row, center, center, 0, none );
+
+                .toRem( padding, var( --default-padding ) );
+
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                width: 100%;
+                height: 100%;
+
+                .background {
+                    position: fixed;
+                    top: 0; left: 0; right: 0; bottom: 0;
+                    background: rgba( 0, 0, 0, .5 );
+                    backdrop-filter: blur(10px);
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .input-box {
+                    .d_flex( row, center, center, 0, none );
+
+                    .toRem( height, 60px );
+                    .toRem( border-radius, var( --default-radius ) );
+
+                    box-shadow: var( --box-shadow );
+                    background: var( --bg-color );
+
+                    width: 100%;
+                    position: relative;
+                    z-index: 1000;
+
+                    .ico {
+                        .ico( 60px, 60px, 20px, 5px, var( --placeholder-color ) );
+                    }
+
+                    input {
+                        .font( "Lora", sans-serif, 20px, 700, var( --text-color ) );
+
+                        width: 100%;
+                        height: 100%;
+                        background: transparent;
+                        border: 0;
+
+                        &::placeholder { color: var( --placeholder-color ); }
                     }
                 }
             }
@@ -178,7 +228,7 @@ html, body {
                     button {
                         .ico( 60px, 60px, 30px, 7px, var( --gold-muted-color ) );
 
-                        .toRem( border-radius, var( --default-button-radius ) );
+                        .toRem( border-radius, var( --default-radius ) );
 
                         background: var( --gold-color );
                         border: 0;
@@ -186,7 +236,14 @@ html, body {
                     }
                 }
 
+                #searchBox {
+                    .input-box {
+                        .toRem( width, 600px );
+                    }
+                }
+
             }
+
         }
 
     }

@@ -11,7 +11,7 @@
                 <img src="{{ asset("/medias/logo.png") }}" alt="Logo">
             </div>
             <nav class="header-navbar-responsive">
-                <button class="btnSearch">
+                <button class="btnSearch" onclick="openSearchModule()">
                     <i class="fi fi-rr-search"></i>
                 </button>
                 <button class="btnMenu" onclick="toggleResponsiveHeaderNavbar()">
@@ -23,10 +23,21 @@
                 <a href="#" class="link">A propos</a>
                 <a href="#" class="link">Articles</a>
                 <a href="#" class="link">Gallerie</a>
-                <button class="btnSearch">
+                <button class="btnSearch" onclick="openSearchModule()">
                     <i class="fi fi-rr-search"></i>
                 </button>
             </nav>
+
+            <div id="searchBox">
+                <div class="background" onclick="closeSearchModule()"></div>
+                <div class="input-box">
+                    <div class="ico">
+                        <i class="fi fi-rr-search"></i>
+                    </div>
+                    <input type="text" placeholder="Rechercher...">
+                </div>
+            </div>
+
         </header>
 
     </div>
