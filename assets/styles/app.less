@@ -460,6 +460,23 @@ html, body {
                     }
 
                 }
+
+                a.view-all {
+                    .font( "Lora", sans-serif, 20px, 700, var( --gold-muted-color ) );
+                    .d_flex( row, center, center, 0, none );
+
+                    .toRem( border-radius, var( --default-radius ) );
+                    .toRem( width, 200px );
+                    .toRem( height, 50px );
+
+                    background: var( --gold-color );
+
+                    text-decoration: none;
+
+                    @media (min-width: 830px){
+                        .toRem( width, 150px );
+                    }
+                }
             }
 
             @media (min-width: 830px){
