@@ -57,8 +57,9 @@ html, body {
             box-shadow: var( --box-shadow );
 
             width: 100%;
-            position: sticky;
+            position: fixed;
             top: 0;
+            z-index: 999;
 
             .header-logo {
                 .d_flex( row, center, center, 0, none );
@@ -255,6 +256,8 @@ html, body {
         main {
             .d_flex( column, flex-start, flex-start, 0, none );
 
+            .toRem( margin-top, 50px );
+
             width: 100%;
             height: auto;
 
@@ -268,7 +271,7 @@ html, body {
                     height: calc( 100vh - 120px );
                     min-height: calc( 100vh - 120px );
                 }
-            }
+            } 
 
             /* About */
             .about {
@@ -457,6 +460,10 @@ html, body {
                     }
 
                 }
+            }
+
+            @media (min-width: 830px){
+                .toRem( margin-top, 120px );
             }
         }
 
