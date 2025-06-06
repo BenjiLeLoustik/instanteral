@@ -27,7 +27,7 @@ html, body {
     height: 100%;
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    overflow: auto;
 
     /* Striped background */
     .striped {
@@ -56,7 +56,8 @@ html, body {
             box-shadow: var( --box-shadow );
 
             width: 100%;
-            position: relative;
+            position: sticky;
+            top: 0;
 
             .header-logo {
                 .d_flex( row, center, center, 0, none );
@@ -253,10 +254,26 @@ html, body {
         main {
             .d_flex( column, flex-start, flex-start, 0, none );
 
-            .toRem( padding, var( --default-padding ) );
-
             width: 100%;
-            height: 100%;
+            height: auto;
+
+            /* Banner */
+            .banner {
+                width: 100%;
+                height: calc( 100vh - 50px );
+                min-height: calc( 100vh - 50px );
+            
+                @media (min-width: 830px){
+                    height: calc( 100vh - 120px );
+                    min-height: calc( 100vh - 120px );
+                }
+            }
+
+            .about {
+                width: 100%;
+                height: 100%;
+                background: red;
+            }
         }
 
         /* Footer */
