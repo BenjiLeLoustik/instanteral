@@ -13,13 +13,12 @@
             <div class="banner striped"></div>
 
             <div class="about">
-                <div class="about-avatar striped"></div>
-                <div class="about-text">
-                    Lorem ipsum dolor sit amet consectetur. Bibendum donec ultricies eu libero 
-                    urna eu pellentesque facilisi. Aenean dui feugiat tincidunt interdum ipsum mi rutrum. 
-                    Eu amet ultrices neque aliquam velit id. A vitae scelerisque nunc interdum risus a egestas. 
-                    At diam et pharetra suspendisse. Aenean at eu arcu donec nibh
+                <div class="about-avatar striped">
+                    {% if about_avatar != "" %}
+                        <img src="{{ about_avatar }}" alt="{{ about_pseudo }}" />
+                    {% endif %}
                 </div>
+                <div class="about-text"> {{ about_small_description }} </div>
                 <a href="#" class="about-button">
                     En savoir plus
                 </a>
