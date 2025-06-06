@@ -3,6 +3,7 @@
 
 :root {
     --bg-color: #FFFFFF;
+    --muted-color: #FAFAFA;
     --text-color: #1E293B;
     --gold-color: #FACC15;
     --gold-dark-color: #eab208;
@@ -320,6 +321,141 @@ html, body {
                     a.about-button {
                         .toRem( width, 200px );
                     }
+                }
+            }
+
+            /* Last articles */
+            .last-articles {
+                .d_flex( column, center, flex-start, calc( var( --default-gap ) * 2 ), none );
+
+                .toRem( padding, calc( var( --default-padding ) * 4 ) var( --default-padding ) );
+
+                width: 100%;
+                height: auto;
+
+                .title {
+                    .font( "Lora", sans-serif, 25px, 700, var( --text-color ) );
+
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .articles-list {
+                    .toRem( gap, calc( var( --default-gap ) * 2 ) );
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    width: 100%;
+
+                    a.article {
+                        .toRem( border-radius, var( --default-radius ) );
+                        .toRem( height, 200px );
+                        .toRem( min-height, 200px );
+
+                        background: var( --muted-color );
+
+                        width: 100%;
+                        position: relative;
+                        text-decoration: none;
+
+                        .article-cover {
+                            .toRem( border-radius, var( --default-radius ) );
+
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        .article-content {
+                            .d_flex( column, center, center, var( --default-gap ), none );
+                            .font( "Lora", sans-serif, auto, auto, auto );
+
+                            .toRem( border-radius, var( --default-radius ) );
+                            .toRem( padding, var( --default-padding ) );
+
+                            background: rgba( 0, 0, 0, .5 );
+                            position: absolute;
+                            top: 0; left: 0; right: 0; bottom: 0;
+
+                            .article-title {
+                                .toRem( font-size, 25px );
+
+                                color: var( --bg-color );
+                                text-shadow: var( --box-shadow );
+
+                                font-weight: 700;
+                            }
+
+                            .article-keywords {
+                                .toRem( font-size, 13px );
+
+                                color: var( --bg-color );
+                                text-shadow: var( --box-shadow );
+
+                                font-weight: 700;
+                            }
+
+                            .article-date {
+                                .toRem( font-size, 13px );
+
+                                color: var( --bg-color );
+                                text-shadow: var( --box-shadow );
+
+                                font-weight: 500;
+                            }
+
+                            .article-description,
+                            .article-button { display: none; }
+                        }
+                    }
+
+                    @media (min-width: 830px){
+                        grid-template-columns: repeat( auto-fill, minmax(350px, 1fr) );
+
+                        a.article {
+                            .toRem( padding, var( --default-padding ) );
+                            .toRem( height, 520px );
+                            .toRem( min-height, 520px );
+
+                            .article-cover {
+                                .toRem( height, 200px );
+                                .toRem( min-height, 200px );
+                            }
+
+                            .article-content {
+
+                                position: relative;
+                                top: auto; left: auto; right: auto; bottom: auto;
+                                background: transparent;
+
+                                .article-title,
+                                .article-keywords,
+                                .article-date { color: var( --text-color ); text-shadow: none; }
+
+                                .article-description {
+                                    .toRem( font-size, 16px );
+
+                                    color: var( --text-color );
+
+                                    font-weight: 400;
+                                    text-align: center;
+                                    width: 100%;
+                                    display: block;
+                                }
+
+                                .article-button {
+                                    .d_flex( row, center, center, 0, none );
+
+                                    .toRem( border-radius, var( --default-radius ) );
+                                    .toRem( width, 150px );
+                                    .toRem( min-height, 50px );
+                                    .toRem( height, 50px );
+
+                                    background: var( --gold-muted-color );
+                                    color: var( --gold-dark-color );
+                                }
+                            }
+                        }
+                    }
+
                 }
             }
         }
