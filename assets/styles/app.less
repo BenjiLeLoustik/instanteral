@@ -292,7 +292,8 @@ html, body {
                     text-align: center;
                 }
 
-                button.about-button {
+                a.about-button {
+                    .d_flex( row, center, center, 0, none );
                     .font( "Lora", sans-serif, 20px, 700, var( --gold-muted-color ) );
 
                     .toRem( width, 200px );
@@ -303,6 +304,7 @@ html, body {
 
                     border: 0;
                     cursor: pointer;
+                    text-decoration: none;
                 }
 
                 @media (min-width: 830px){
@@ -315,7 +317,7 @@ html, body {
                         .toRem( width, 670px );
                     }
 
-                    button.about-button {
+                    a.about-button {
                         .toRem( width, 200px );
                     }
                 }
