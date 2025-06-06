@@ -94,7 +94,7 @@ html, body {
                 }
             }
 
-            nav.header-navbar {                
+            nav.header-navbar {
                 .toRem( top, 50px );
                 .toRem( padding, var( --default-padding ) );
 
@@ -108,6 +108,8 @@ html, body {
 
                 &.activeResponsiveNavar {
                     .d_flex( column, flex-start, flex-start, var( --default-gap ), none );
+
+                    button { display: none; }
                 }
 
                 a.link {
