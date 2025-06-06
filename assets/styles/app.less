@@ -268,6 +268,58 @@ html, body {
                     min-height: calc( 100vh - 120px );
                 }
             }
+
+            /* About */
+            .about {
+                .d_flex( column, center, flex-start, calc( var( --default-gap ) * 2 ), none );
+
+                .toRem( padding, calc( var( --default-padding ) * 4 ) var( --default-padding ) );
+
+                width: 100%;
+                height: auto;
+
+                .about-avatar {
+                    .toRem( width, 100px );
+                    .toRem( height, 100px );
+
+                    border-radius: 100%;
+                }
+
+                .about-text {
+                    .font( "Lora", sans-serif, 16px, 600, var( --text-color ) );
+
+                    width: 100%;
+                    text-align: center;
+                }
+
+                button.about-button {
+                    .font( "Lora", sans-serif, 20px, 700, var( --gold-muted-color ) );
+
+                    .toRem( width, 200px );
+                    .toRem( height, 50px );
+                    .toRem( border-radius, var( --default-radius ) );
+
+                    background: var( --gold-color );
+
+                    border: 0;
+                    cursor: pointer;
+                }
+
+                @media (min-width: 830px){
+                    .about-avatar {
+                        .toRem( width, 200px );
+                        .toRem( height, 200px );
+                    }
+
+                    .about-text {
+                        .toRem( width, 670px );
+                    }
+
+                    button.about-button {
+                        .toRem( width, 200px );
+                    }
+                }
+            }
         }
 
         /* Footer */
