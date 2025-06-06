@@ -259,6 +259,24 @@ html, body {
             height: 100%;
         }
 
+        /* Footer */
+        footer {
+            .d_flex( row, center, center, 0, none );
+            .font( "Lora", sans-serif, 12px, 700, var( --text-color ) );
+
+            .toRem( height, 50px );
+            .toRem( min-height, 50px );
+            
+            background: var( --bg-color );
+            box-shadow: var( --box-shadow );
+
+            width: 100%;
+
+            @media (min-width: 830px){
+                .toRem( font-size, 20px );
+            }
+        }
+
     }
 }
 
