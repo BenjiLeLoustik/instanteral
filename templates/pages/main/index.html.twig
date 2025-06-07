@@ -49,10 +49,10 @@
                                 <div class="article-date">
                                     {% if article.date.updated != "" %}
                                         {% trans %}Mis à jour le{% endtrans %}
-                                        ...
+                                        {{ article.date.updated|format_datetime('medium', 'short', locale: _DateTimelocale) }}
                                     {% else %}
                                         {% trans %}Ajouté le{% endtrans %}
-                                        ...
+                                        {{ article.date.added|format_datetime('medium', 'short', locale: _DateTimelocale) }}
                                     {% endif %}
                                 </div>
                                 <div class="article-description">{{ article.smallDescription }}</div>

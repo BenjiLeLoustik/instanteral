@@ -1,7 +1,8 @@
 {# Sessions #}
 {% if app.session.get("_locale") == null %} {{ app.session.set("_locale", settings.default.locale) }} {% endif %}
 
-{% set _locale = "uk" %}
+{% set _locale = app.session.get("_locale") %}
+{% set _DateTimelocale = settings.locales[_locale].dateTimeLocale %}
 
 {# templates "./base.html.twig" #}
 <!DOCTYPE html>

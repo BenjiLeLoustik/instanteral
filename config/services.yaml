@@ -11,11 +11,13 @@ parameters:
         locales: {
             uk: {
                 name: 'English',
-                origin: 'United-Kingdom'
+                origin: 'United-Kingdom',
+                dateTimeLocale: 'en'
             },
             fr: {
                 name: 'Français',
                 origin: 'France',
+                dateTimeLocale: 'fr'
             }
         }
     }
