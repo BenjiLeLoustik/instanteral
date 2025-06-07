@@ -1,3 +1,5 @@
+{% set currentRoute = app.request.attributes.get('_route') %}
+
 <header>
     <div class="header-logo">
         <img src="{{ asset("/medias/logo.png") }}" alt="Logo">
@@ -11,17 +13,17 @@
         </button>
     </nav>
     <nav class="header-navbar">
-        <a href="{{ path('main.index') }}" class="link active">
+        <a href="{{ path('main.index') }}" class="link {% if currentRoute == 'main.index' %}active{% endif %}">
             {% trans %}Accueil{% endtrans %}
         </a>
-        <a href="{{ path('main.about') }}" class="link">
+        <a href="{{ path('main.about') }}" class="link {% if currentRoute == 'main.about' %}active{% endif %}">
             {% trans %}A propos{% endtrans %}
         </a>
         <a href="#" class="link">
             {% trans %}Articles{% endtrans %}
         </a>
-        <a href="#" class="link">
-            {% trans %}Gallerie{% endtrans %}
+        <a href="{{ path('main.gallery') }}" class="link {% if currentRoute == 'main.gallery' %}active{% endif %}">
+            {% trans %}Galerie{% endtrans %}
         </a>
         <button class="btnSearch" onclick="openSearchModule()">
             <i class="fi fi-rr-search"></i>
