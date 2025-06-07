@@ -28,65 +28,35 @@
                 <div class="title">Derniers articles</div>
                 <div class="articles-list">
 
-                    <a href="#" class="article">
-                        <div class="article-cover striped"></div>
-                        <div class="article-content">
-                            <div class="article-title">Lorem ipsum dolor sit amet</div>
-                            <div class="article-keywords">
-                                <span class="keyword">Mot clé</span>,
-                                <span class="keyword">Mot clé</span>
+                    {% for article in latestArticles %}
+                    
+                        <a href="#" class="article">
+                            <div class="article-cover striped">
+                                {% if article.cover != "" %}
+                                    <img src="{{ article.cover }}" alt="{{ article.slug }}">
+                                {% endif %}
                             </div>
-                            <div class="article-date">Ajouté le ...</div>
-                            <div class="article-description">
-                                Lorem ipsum dolor sit amet consectetur. 
-                                Id lorem id diam pulvinar gravida consequat nec. 
-                                Libero massa mauris et sapien sagittis mauris. Aenean feugiat tristique pretium ultrices 
-                                fusce magna. Viverra aliquet nibh mi tortor purus venenatis est urna. 
-                                Molestie sit ut ultrices morbi et integer...
-                            </div>
-                            <div class="article-button">Lire</div>
-                        </div>
-                    </a>
+                            <div class="article-content">
+                                <div class="article-title">{{ article.title }}</div>
+                                <div class="article-keywords">
+                                    {% for keyword in article.keywords %}
+                                        <span class="keyword">keyword</span>
 
-                    <a href="#" class="article">
-                        <div class="article-cover striped"></div>
-                        <div class="article-content">
-                            <div class="article-title">Lorem ipsum dolor sit amet</div>
-                            <div class="article-keywords">
-                                <span class="keyword">Mot clé</span>,
-                                <span class="keyword">Mot clé</span>
+                                    {% endfor %}
+                                </div>
+                                <div class="article-date">
+                                    {% if article.date.updated != "" %}
+                                        Mis à jour le ...
+                                    {% else %}
+                                        Ajouté le ...
+                                    {% endif %}
+                                </div>
+                                <div class="article-description">{{ article.smallDescription }}</div>
+                                <div class="article-button">Lire</div>
                             </div>
-                            <div class="article-date">Ajouté le ...</div>
-                            <div class="article-description">
-                                Lorem ipsum dolor sit amet consectetur. 
-                                Id lorem id diam pulvinar gravida consequat nec. 
-                                Libero massa mauris et sapien sagittis mauris. Aenean feugiat tristique pretium ultrices 
-                                fusce magna. Viverra aliquet nibh mi tortor purus venenatis est urna. 
-                                Molestie sit ut ultrices morbi et integer...
-                            </div>
-                            <div class="article-button">Lire</div>
-                        </div>
-                    </a>
+                        </a>
 
-                    <a href="#" class="article">
-                        <div class="article-cover striped"></div>
-                        <div class="article-content">
-                            <div class="article-title">Lorem ipsum dolor sit amet</div>
-                            <div class="article-keywords">
-                                <span class="keyword">Mot clé</span>,
-                                <span class="keyword">Mot clé</span>
-                            </div>
-                            <div class="article-date">Ajouté le ...</div>
-                            <div class="article-description">
-                                Lorem ipsum dolor sit amet consectetur. 
-                                Id lorem id diam pulvinar gravida consequat nec. 
-                                Libero massa mauris et sapien sagittis mauris. Aenean feugiat tristique pretium ultrices 
-                                fusce magna. Viverra aliquet nibh mi tortor purus venenatis est urna. 
-                                Molestie sit ut ultrices morbi et integer...
-                            </div>
-                            <div class="article-button">Lire</div>
-                        </div>
-                    </a>
+                    {% endfor %}
 
                 </div>
                 <a href="#" class="view-all">
