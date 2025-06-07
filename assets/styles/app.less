@@ -305,6 +305,8 @@ html, body {
 
                     width: 100%;
                     text-align: center;
+
+                    &.full { text-align: left; }
                 }
 
                 a.about-button {
@@ -322,6 +324,57 @@ html, body {
                     text-decoration: none;
                 }
 
+                .about-pictures {
+                    .d_flex( row, center, center, 0, none );
+                    
+                    width: 100%;
+                    height: auto;
+
+                    .pictures {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                        grid-auto-rows: minmax(200px, 250px);
+                        gap: 20px;
+                        padding: 20px;
+                        grid-auto-flow: dense;
+                        width: 100%;
+
+                        .picture {
+                            .d_flex( row, center, center, 0, none );
+
+                            .toRem( border-radius, var( --default-radius ) );
+
+                            box-shadow: var( --box-shadow );
+
+                            transition: transform 0.3s ease-in-out;
+
+                            img {
+                                .toRem( border-radius, var( --default-radius ) );
+
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+
+                            @media (min-width: 830px) {
+                                &.wide {
+                                    grid-column: span 2;
+                                }
+
+                                &.tall {
+                                    grid-row: span 2;
+                                }
+
+                                &.big {
+                                    grid-row: span 2;
+                                    grid-column: span 2;
+                                }
+                            }
+
+                        }
+                    }
+                }
+
                 @media (min-width: 830px){
                     .about-avatar {
                         .toRem( width, 200px );
@@ -330,6 +383,8 @@ html, body {
 
                     .about-text {
                         .toRem( width, 670px );
+
+                        &.full { width: 100%; }
                     }
 
                     a.about-button {

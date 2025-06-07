@@ -9,6 +9,33 @@ use Symfony\Component\Routing\Attribute\Route;
 final class MainController extends AbstractController
 {
 
+    public $aboutPictures = [
+        [
+            "src" => "",
+            "size" => "",
+            "title" => ""
+        ],
+        [
+            "src" => "",
+            "size" => "",
+            "title" => ""
+        ],
+        [
+            "src" => "",
+            "size" => "tall",
+            "title" => ""
+        ],
+        [
+            "src" => "",
+            "size" => "big",
+            "title" => ""
+        ],
+        [
+            "src" => "",
+            "size" => "wide",
+            "title" => ""
+        ]
+    ];
     public $aboutPseudo = "Allistair B.";
     public $aboutAvatar = "";
     public $aboutSmallDescription = "Lorem ipsum dolor sit amet consectetur. Bibendum donec ultricies eu libero urna eu pellentesque facilisi. Aenean dui feugiat tincidunt interdum ipsum mi rutrum. Eu amet ultrices neque aliquam velit id. A vitae scelerisque nunc interdum risus a egestas. At diam et pharetra suspendisse. Aenean at eu arcu donec nibh";
@@ -71,7 +98,8 @@ final class MainController extends AbstractController
         return $this->render("pages/main/about.html.twig", [
             "about_pseudo" => $this->aboutPseudo,
             "about_avatar" => $this->aboutAvatar,
-            "about_full_description" => $this->aboutFullDescription
+            "about_full_description" => $this->aboutFullDescription,
+            "about_pictures" => $this->aboutPictures
         ]);
     }
 

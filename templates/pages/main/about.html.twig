@@ -14,7 +14,27 @@
 
         <main>
 
-            
+            <div class="about">
+                <div class="about-avatar striped">
+                    {% if about_avatar != "" %}
+                        <img src="{{ about_avatar }}" alt="{{ about_pseudo }}" />
+                    {% endif %}
+                </div>
+                <div class="about-text full"> {{ about_full_description }} </div>
+                <div class="about-pictures">
+                    <div class="pictures">
+
+                        {% for picture in about_pictures %}
+                            <div class="picture {{ picture.size }} striped">
+                                {% if picture.src != "" %}
+                                    <img src="{{ picture.src }}" alt="{{ picture.title }}">
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+            </div>
 
         </main>
 
