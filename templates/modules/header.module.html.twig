@@ -11,10 +11,18 @@
         </button>
     </nav>
     <nav class="header-navbar">
-        <a href="#" class="link active">Accueil</a>
-        <a href="#" class="link">A propos</a>
-        <a href="#" class="link">Articles</a>
-        <a href="#" class="link">Gallerie</a>
+        <a href="#" class="link active">
+            {% trans %}Accueil{% endtrans %}
+        </a>
+        <a href="#" class="link">
+            {% trans %}A propos{% endtrans %}
+        </a>
+        <a href="#" class="link">
+            {% trans %}Articles{% endtrans %}
+        </a>
+        <a href="#" class="link">
+            {% trans %}Gallerie{% endtrans %}
+        </a>
         <button class="btnSearch" onclick="openSearchModule()">
             <i class="fi fi-rr-search"></i>
         </button>
@@ -26,7 +34,7 @@
             <div class="ico">
                 <i class="fi fi-rr-search"></i>
             </div>
-            <input type="text" placeholder="Rechercher...">
+            <input type="text" placeholder="{% trans %}Rechercher...{% endtrans %}">
         </div>
     </div>
 

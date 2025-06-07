@@ -20,12 +20,14 @@
                 </div>
                 <div class="about-text"> {{ about_small_description }} </div>
                 <a href="#" class="about-button">
-                    En savoir plus
+                    {% trans %}En savoir plus{% endtrans %}
                 </a>
             </div>
 
             <div class="last-articles">
-                <div class="title">Derniers articles</div>
+                <div class="title">
+                    {% trans %}Derniers articles{% endtrans %}
+                </div>
                 <div class="articles-list">
 
                     {% for article in latestArticles %}
@@ -46,13 +48,17 @@
                                 </div>
                                 <div class="article-date">
                                     {% if article.date.updated != "" %}
-                                        Mis à jour le ...
+                                        {% trans %}Mis à jour le{% endtrans %}
+                                        ...
                                     {% else %}
-                                        Ajouté le ...
+                                        {% trans %}Ajouté le{% endtrans %}
+                                        ...
                                     {% endif %}
                                 </div>
                                 <div class="article-description">{{ article.smallDescription }}</div>
-                                <div class="article-button">Lire</div>
+                                <div class="article-button">
+                                    {% trans %}Lire{% endtrans %}
+                                </div>
                             </div>
                         </a>
 
@@ -60,7 +66,7 @@
 
                 </div>
                 <a href="#" class="view-all">
-                    Tous voir
+                    {% trans %}Tous voir{% endtrans %}
                 </a>
             </div>
 
