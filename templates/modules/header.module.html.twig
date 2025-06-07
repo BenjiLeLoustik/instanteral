@@ -19,7 +19,7 @@
         <a href="{{ path('main.about') }}" class="link {% if currentRoute == 'main.about' %}active{% endif %}">
             {% trans %}A propos{% endtrans %}
         </a>
-        <a href="#" class="link">
+        <a href="{{ path('articles.index') }}" class="link">
             {% trans %}Articles{% endtrans %}
         </a>
         <a href="{{ path('main.gallery') }}" class="link {% if currentRoute == 'main.gallery' %}active{% endif %}">
