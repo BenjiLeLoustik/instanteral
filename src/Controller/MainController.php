@@ -103,4 +103,10 @@ final class MainController extends AbstractController
         ]);
     }
 
+    #[Route('/galery', name: 'main.galery')]
+    public function galery(): Response
+    {
+        return $this->render("pages/main/galery.html.twig", []);
+    }
+
 }
