@@ -1,0 +1,36 @@
+{# templates "./pages/main/index.html.twig" #}
+
+{% extends "./base.html.twig" %}
+
+{% block title %}
+    {% trans %}Allistair B. - A propos{% endtrans %}
+{% endblock %}
+
+{% block container %}
+
+    <div id="container">
+
+        {% include "./modules/header.module.html.twig" %}
+
+        <main>
+
+            <div class="gallery">
+                <div class="pictures">
+
+                    {% for picture in gallery %}
+                        <div class="picture {{ picture.size }} striped">
+                        {% if picture.src != "" %}
+                            <img src="{{ picture.src }}" alt="{{ picture.title }}">
+                        {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </main>
+
+        {% include "./modules/footer.module.html.twig" %}
+
+    </div>
+
+{% endblock %}

@@ -9,6 +9,59 @@ use Symfony\Component\Routing\Attribute\Route;
 final class MainController extends AbstractController
 {
 
+    public $gallery = [
+        [
+            "src" => "",
+            "size" => "",
+            "title" => ""
+        ],
+        [
+            "src" => "",
+            "size" => "",
+            "title" => ""
+        ],
+        [
+            "src" => "",
+            "size" => "tall",
+            "title" => ""
+        ],
+        [
+            "src" => "",
+            "size" => "big",
+            "title" => ""
+        ],
+        [
+            "src" => "",
+            "size" => "wide",
+            "title" => ""
+        ],
+        [
+            "src" => "",
+            "size" => "",
+            "title" => ""
+        ],
+        [
+            "src" => "",
+            "size" => "",
+            "title" => ""
+        ],
+        [
+            "src" => "",
+            "size" => "tall",
+            "title" => ""
+        ],
+        [
+            "src" => "",
+            "size" => "big",
+            "title" => ""
+        ],
+        [
+            "src" => "",
+            "size" => "wide",
+            "title" => ""
+        ]
+    ];
+
     public $aboutPictures = [
         [
             "src" => "",
@@ -103,10 +156,12 @@ final class MainController extends AbstractController
         ]);
     }
 
-    #[Route('/galery', name: 'main.galery')]
-    public function galery(): Response
+    #[Route('/gallery', name: 'main.gallery')]
+    public function gallery(): Response
     {
-        return $this->render("pages/main/galery.html.twig", []);
+        return $this->render("pages/main/gallery.html.twig", [
+            "gallery" => $this->gallery
+        ]);
     }
 
 }
